@@ -26,8 +26,8 @@
 	exec --no-startup-id dex --autostart --environment i3
 	exec --no-startup-id volumectl toggle && $refresh_i3status
 	exec --no-startup-id feh --bg-fill ~/.config/i3/background.png
-	exec --no-startup-id xinput set-prop 11 344 1 && set-prop 11 357 1
-#	exec --no-startup-id xinput set-prop 11 312 1 && xinput set-prop 11 325 1
+#	exec --no-startup-id xinput set-prop 11 344 1 && set-prop 11 357 1
+	exec --no-startup-id xinput set-prop 11 312 1 && xinput set-prop 11 325 1
 	exec --no-startup-id ibus-daemon -drxR
 	exec --no-startup-id xcompmgr -cfn
 #	exec --no-startup-id redshift
@@ -41,7 +41,9 @@
 	exec --no-startup-id xss-lock $HOME/.local/bin/scripts/lock
 #	double shift for caps
 	exec setxkbmap -option "shift:both_capslock"
-	exec ibus engine xkb:us:colemak_dh:eng
+	exec --no-startup-id ibus engine xkb:us:colemak_dh:eng
+	exec --no-startup-id kdeconnectd
+	exec --no-startup-id kdeconnect-indicator
 #	colemak-like setup for caps -> backspace
 #	exec setxkbmap -option "caps:backspace"
 #	exec xmodmap -e "keycode 66 = BackSpace BackSpace BackSpace"
