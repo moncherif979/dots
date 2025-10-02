@@ -1,4 +1,6 @@
 #!/bin/sh
 # Update the system and keep a log of the last update
-echo "The last update was:"
+echo "The last system update was:"
+cat "$HOME/lastupdate-pac"
+echo "The last AUR update was:"
 cat "$HOME/lastupdate"

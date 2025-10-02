@@ -13,6 +13,8 @@
 export PATH="${PATH}:$HOME/.local/bin:/usr/local/bin:$HOME/.local/bin/scripts"
 export ZSH="/home/birrabenzina/.oh-my-zsh"
 export XDG_RUNTIME_DIR="/home/birrabenzina"
+xinput set-prop 11 315 1 && xinput set-prop 11 330 1
+
 # --- }}}
 
 # --- TILIX VTE SOURCE --- {{{
@@ -45,8 +47,9 @@ fi
 # vim keys
 set -o vi
 # temporary caps -> backspace
-#setxkbmap -option "shift:both_capslock"
-#setxkbmap -option "caps:backspace"
+#xinput set-prop 11 315 1 && xinput set-prop 11 330 1
+setxkbmap -option "shift:both_capslock"
+setxkbmap -option "caps:backspace"
 #xmodmap -e "keycode 66 = BackSpace BackSpace BackSpace"
 # --- }}}
 
@@ -59,6 +62,7 @@ alias emf="cd ~/Dropbox/spicyphysics/sources/electromagnetism && ls"
 alias drop="cd ~/Dropbox/ && ls"
 alias i3f="cd ~/.config/i3 && ls"
 alias books="cd ~/books && ls"
+alias landau="cd ~/books/Course_of_Theoretical_Physics && ls"
 alias cmds="cd ~/.local/bin/sys && ls"
 # -- }}}
 # -- RICES -- {{{
@@ -83,18 +87,21 @@ alias clean-aur='(set -x; yay -Rs $(yay -Qdtq))'
 alias pubip="wget http://checkip.dyndns.org/ -O - -o /dev/null | cut -d: -f 2 | cut -d\<     -f 1"
 alias :q="exit"
 alias sysupd="yes | sudo pacman -Syu"
-alias totupd="updatelogger && yes | paru -Syu --skipreview && date >> $HOME/lastupdate"
+alias totupd="updatelogger && yes | sudo pacman -Syu && date > $HOME/lastupdate-pac && paru -Syu --skipreview && date > $HOME/lastupdate"
 alias stfu="shutdown now"
 alias powersave="sudo cpupower frequency-set -g powersave"
 alias performance="sudo cpupower frequency-set -g performance"
 alias schedutil="sudo cpupower frequency-set -g schedutil"
 alias clean="clear && neofetch"
 alias wre="nmcli d w re"
-alias hotspot="nmcli d w r && sleep 3 && nmcli d w con Kosmos-188"
+alias hotspot="nmcli d w r && sleep 3 && nmcli d w con Yunhai-2"
+alias citrix="$HOME/.local/bin/citrix&disown"
 # -- }}}
 # -- FILE SHORTCUTS -- {{{
 alias nem="nvim ~/Dropbox/spicyphysics/sources/electromagnetism/electromagnetism.tex"
 alias nqm="cd ~/Dropbox/spicyphysics/sources/quantum && nvim qm.tex"
-alias bib="cd ~/Dropbox/appunti/bibliografia/bib.bib"
+alias bib="cd ~/Dropbox/appunti/bibliografia && nvim bib.bib"
+alias nth="cd ~/Dropbox/thesis && ls"
+alias nthesis="cd ~/Dropbox/thesis && nvim thesis.tex"
 # -- }}}
 # --- }}}

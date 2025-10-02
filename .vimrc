@@ -90,7 +90,7 @@
 	autocmd FileType vim inoremap <C-c> <Esc>0i"<Esc>A
 " -- TODOS -- {{{
 "  find TODOs
-	nnoremap <leader>f /TODO<enter>
+	nnoremap <M-t> /TODO<enter>
 "  make TODOs
 	inoremap <leader>t <esc>A%%TODO
 	nnoremap <leader>t A%%TODO
@@ -144,20 +144,31 @@
 	autocmd FileType tex inoremap <C-t> \texttt{}<++><esc>T{i
 	autocmd FileType tex inoremap <C-e> \emph{}<++><esc>T{i
 	autocmd FileType tex inoremap <M-i> \textit{}<++><esc>T{i
-	autocmd FileType tex inoremap <leader>v \vec{}<++><esc>T{i
+	autocmd FileType tex inoremap <leader>v \vct{}<++><esc>T{i
+	autocmd FileType tex inoremap <leader>V \ver{}<++><esc>T{i
 	autocmd FileType tex inoremap <leader>b \pmb{}<++><esc>T{i
-	autocmd FileType tex inoremap <leader>c \hat{\vec{}}<++><esc>T{i
+"	autocmd FileType tex inoremap <leader>c \hat{\vec{}}<++><esc>T{i
+	autocmd FileType tex inoremap <leader>c \fup{\vct{k}}<esc>A
+	autocmd FileType tex inoremap <leader>C \fups{\vct{k}}<esc>A
+	autocmd FileType tex inoremap <leader>d \fdw{\vct{k}}<esc>A
+	autocmd FileType tex inoremap <leader>D \fdws{\vct{k}}<esc>A
 	autocmd FileType tex inoremap <leader>n \nabla
 	autocmd FileType tex inoremap <leader>x \cpr{}{<++>}{<++>}<++><esc>T{i<esc>T{i<esc>T{i
-	autocmd FileType tex inoremap <leader>i \int_{}^{<++>}<++>\dd^{<++>}{<++>}<++><esc>T{i<esc>T{i<esc>T{i<esc>T{i
+	autocmd FileType tex inoremap <leader>i \int_{}^{<++>}<++>\<space>\dd^{<++>}{<++>}<++><esc>T{i<esc>T{i<esc>T{i<esc>T{i
 	autocmd FileType tex inoremap <leader>, \cdot
 	autocmd FileType tex inoremap <leader>' \times
 	autocmd FileType tex inoremap <leader>f \varphi
 	autocmd FileType tex inoremap <leader>r \varrho
-	autocmd FileType tex inoremap <C-l> <esc>A<enter>\lipsum<esc>A
+	autocmd FileType tex inoremap <leader>p \psi
+	autocmd FileType tex inoremap <leader>e \epsilon
+	autocmd FileType tex inoremap <C-w> <esc>A<enter>\lipsum<esc>A
 	autocmd FileType tex nnoremap <C-l> <esc>A<enter>\lipsum<esc>
-	autocmd FileType tex inoremap <C-h> \hbar
-	autocmd FileType tex inoremap <C-a> \mathrm{}<++><esc>T{i
+"	autocmd FileType tex inoremap <C-h> \hbar
+	autocmd FileType tex inoremap <C-a> \adj{}<++><esc>T{i
+	autocmd FileType tex inoremap <leader>* ^{\star}<++><esc>T<hi
+	autocmd FileType tex inoremap <C-k> \ket{}<++><esc>T{i
+"	autocmd FileType tex inoremap <C-b> \bra{}<++><esc>T{i
+	autocmd FileType tex inoremap <M-o> \hat{}<++><esc>T{i
 " -- }}}
 " -- LIPSUM NAVIGATION -- {{{
 	autocmd FileType tex nnoremap <M-l> /\\lipsum<enter><esc>:s/\\lipsum/<enter>i
@@ -175,7 +186,7 @@
 	" end maths abbrev
 	autocmd FileType tex iabbrev wlg without loss of generality
 	autocmd FileType tex iabbrev fourier Fourier
-	autocmd FileType tex iabbrev iff if and only if
+"	autocmd FileType tex iabbrev iff if and only if
 	autocmd FileType tex iabbrev airy Airy
 	autocmd FileType tex iabbrev emw electromagnetic wave
 	autocmd FileType tex iabbrev emws electromagnetic waves
@@ -196,6 +207,11 @@
 	autocmd FileType tex iabbrev Pde Partial differential equation
 	autocmd FileType tex iabbrev pdes partial differential equations
 	autocmd FileType tex iabbrev Pdes Partial differential equations
+	autocmd FileType tex iabbrev gibbs Gibbs
+	autocmd FileType tex iabbrev hamiltonian Hamiltonian
+	autocmd FileType tex iabbrev schrodinger Schrödinger
+	autocmd FileType tex iabbrev fermi Fermi
+	autocmd FileType tex iabbrev bose Bose
 "  -- }}}
 " --- }}}
 
